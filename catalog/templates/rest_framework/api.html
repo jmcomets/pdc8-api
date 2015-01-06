@@ -1,0 +1,21 @@
+{% extends "rest_framework/base.html" %}
+
+{% load staticfiles %}
+
+{% block bootstrap_theme %}
+<link rel="stylesheet" href="{% static "bootstrap.min.css" %}">
+{% endblock %}
+
+{% block bootstrap_navbar_variant %}
+navbar-default
+{% endblock %}
+
+{% block branding %}
+<a href="#" class="navbar-brand">
+  Rencontres Arbres
+</a>
+{% endblock branding %}
+
+{% block title %}
+Rencontres Arbres
+{% endblock title %}
