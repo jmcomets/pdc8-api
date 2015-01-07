@@ -17,7 +17,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'catalog',
+
+    # REST API
     'rest_framework',
+    # CORS headers for API
+    'corsheaders',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -28,6 +32,10 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Corsheader middleware
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -75,3 +83,7 @@ REST_FRAMEWORK = {
             ],
         'PAGINATE_BY': 100,
         }
+
+# CORS
+CORS_URLS_REGEX = r'^/api/.*$'
+CORS_ORIGIN_ALLOW_ALL = True
